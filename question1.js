@@ -8,21 +8,32 @@
 
 
 const myFunction = (arr1, arr2, ) => {
-    const newArr = [];
+    var a1= out(arr1,true);
+    var a2= out(arr2,true);
+    
+   var a=[], finalArr=[];
+    for(var i=0;i< a1.length;i++)
+      a[a1[i]]=false;
+    for(i=0;i< a2.length;i++)
+    if(a[a2[i]]===true) 
+       { delete a[a2[i]];}
+      else a[a2[i]]=true;
+    for(var k in a)
+    finalArr.push(k);
+    return finalArr;   
+    };
 
-    for(var j=0; j<arr1.length ; ++i){
-        let flag =0;
-        for(var k = 0 ; k<arr2.length; ++k){
-            if(arr1[j] === arr2[k]){
-                arr2.splice(k,1);
-                k--;
-                flag = 1;
-            }
-            if(flag == 0 ){
-                newArr.unshift(arr1[j]);
-            }
-        }
-    }
-    newArr.unshift(arr2);
-    return newArr;
-};
+ var out = (a, shallow,r) => {
+    if(!r){ r = [];}
+  if (shallow) {
+    return r.concat.apply(r,a);
+    }  
+     for(i=0; i< a.length; i++){
+          if(a[i].constructor == Array){
+              out(a[i],shallow,r);
+          }else{
+              r.push(a[i]);
+          }
+      }
+      return r;
+  };
