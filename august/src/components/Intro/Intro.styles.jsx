@@ -2,22 +2,29 @@ import styled from "styled-components";
 
 export const Container = styled.div`
     width: 100%;
-    height: 100%;
     display: grid;
     place-items: center;
     margin-top: 50px;
+    @media (max-width: 767px){
+        width : 100%
+    }
 `;
 
 export const Wrapper = styled.div`
-    max-width: 1100px;
+    max-width: 760px;
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 50px;
+    @media (max-width: 767px) {
+        flex-wrap: wrap;
+    }
 `;
 
 export const LeftSection = styled.div`
-    flex: 1;
-    /* min-height: 30px; */
+    display:  flex;
+    justify-content: center;
+    align-items: center;
 `;
 
 export const Image = styled.img`
@@ -29,21 +36,34 @@ export const Image = styled.img`
 export const RightSection = styled.div`
     flex: 1;
     display: flex;
+    align-items: center;
+    justify-content: center;
     flex-direction: column;
     gap : 20px;
 `;
 
 export const DetailsWrap = styled.div`
+    @media (max-width : 767px) {
+        text-align: center;
+    }
 `;
 
 export const CompanySection = styled.div`
     display: flex;
     gap: 20px;
+    @media (max-width: 767px ) {
+        align-items: center;
+        flex-wrap: wrap;
+    }
 `;
 
 export const CompanyImage = styled.img`
     width: 150px;
     height: 60px;
+    @media (max-width: 767px) {
+        width : 100px;
+        height : 50px;
+    }
 `;
 
 export const Bold = styled.h1`
@@ -54,11 +74,16 @@ export const Bold = styled.h1`
 
 export const Desc = styled.p`
     font-size: 16px;
+    max-width: 500px;
 `;
 
 export const InputSection = styled.div`
     display : flex;
     align-items: center;
+    @media (max-width : 767px) {
+        margin: 0 auto;
+        justify-content: center;
+    }
 `;
 
 export const InputField = styled.input`

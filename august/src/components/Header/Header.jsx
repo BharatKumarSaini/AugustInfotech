@@ -1,5 +1,6 @@
 import React from "react";
-import { Container, Wrapper, LogoSection, Logo, NavigationSection, LinkSection, UserSection, LoginButton, RegesterButton } from "./Header.styles";
+import Menu from "../Menu"
+import { Container, Wrapper, LogoSection, Logo, NavigationSection, LinkSection, UserSection, LoginButton, RegesterButton, MenuWrapper } from "./Header.styles";
 
 const Header = () => {
     return (
@@ -16,6 +17,9 @@ const Header = () => {
                     <RegesterButton>Sign Up</RegesterButton>
                 </UserSection>
             </Wrapper>
+            <MenuWrapper>
+                <Menu/>
+            </MenuWrapper>
         </Container>
     )
 };

@@ -2,16 +2,24 @@ import styled from "styled-components";
 
 export const Container = styled.div`
     width : 100%;
-    height : 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    @media (max-width: 767px) {
+        align-items: flex-start;
+    }
 `;
 
 export const Wrapper = styled.div`
     max-width : 1250px;
-    min-height : 85px;
-    margin-inline : auto;
+    width : 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    @media(max-width: 767px) {
+        display : none;
+    }
 `;
 
 export const LogoSection = styled.div`
@@ -24,7 +32,7 @@ export const LogoSection = styled.div`
 
 export const Logo = styled.img`
     width : 100%;
-    height :150px;
+    height :70px;
     object-fit : cover;
 `;
 
@@ -33,8 +41,7 @@ export const NavigationSection = styled.div`
     gap : 35px;
     a {
         text-decoration : none;
-        font-size : 16px;
-        font-weight: 500;
+        font : 500 16px;
     }
 `;
 
@@ -76,3 +83,12 @@ export const LoginButton = styled(RegesterButton)`
     color : black;
 `;
 
+
+export const MenuWrapper = styled.div`
+    display: none;
+    @media(max-width: 767px) {
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+`;
